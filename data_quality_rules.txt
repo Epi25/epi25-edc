@@ -1,31 +1,52 @@
 # Needs to be copy-pasted to the individual forms data quality
-# TODO: Complete
-# TODO: issue #1
 
 ### GGE
+[absence_age_onset] > [absence_age_last] and [absence_age_last] <> ""
+[atonic_age_onset] > [atonic_age_last] and [atonic_age_last] <> ""
+[atypical_absence_age_onset] > [atypical_absence_age_last] and [atypical_absence_age_last] <> ""
+
+[generalized_age_onset] > [generalized_age_last] and [generalized_age_last] <> ""
+
+[myoclonic_age_onset] > [myoclonic_age_last] and [myoclonic_age_last] <> ""
+[other_age_onset] > [other_age_last] and [other_age_last] <> ""
+[se_con_age_onset] > [se_con_age_last] and [se_con_age_last] <> ""
+[se_non_age_onset] > [se_non_age_last] and [se_non_age_last] <> ""
+[tonic_age_onset] > [tonic_age_last] and [tonic_age_last] <> ""
+[unclassified_age_onset] > [unclassified_age_last] and [unclassified_age_last] <> ""
+
+
+[other_age_onset] > [other_age_last] and [other_age_last] <> ""
+
 
 ### Focal
+Age of onset and latest incidence (febrile seizures)
+[febclassic_age_onset] > [febclassic_age_last] and [febclassic_age_last] <> ""
+
+[febprov_age_onset] > [febprov_age_last] and [febprov_age_last] <> ""
+
+[aura_age_onset] > [aura_age_last] and [aura_age_last] <> ""
+
+[dyscognitive_age_onset] >  [dyscognitive_age_last] and [dyscognitive_age_last] <> ""
+
+[bilateral_age_onset] > [bilateral_age_last] and [bilateral_age_last] <> ""
+
+[other_age_onset] > [other_age_last] and [other_age_last] <> ""
+
 
 ### EE
-[febclassic_age_onset] < [febclassic_age_last]
-[febclassic_age_last] and
-[febprov_age_onset] < [febprov_age_last] and] < [febprov_age_last] and
-[aura_age_onset] < [aura_age_last] and] < [aura_age_last] and
-[dyscognitive_age_onset] < [dyscognitive_age_last] and] < [dyscognitive_age_last] and
-[bilateral_age_onset] < [bilateral_age_last] and] < [bilateral_age_last] and
-[other_age_onset] < [other_age_last] and] < [other_age_last]
+Age of onset and latest incidence (febrile seizures)
+[febclassic_age_onset] > [febclassic_age_last] and [febclassic_age_last] <> ""
+[febprov_age_onset] > [febprov_age_last] and [febprov_age_last] <> ""
+[spasms_age_onset] > [spasms_age_last] and [spasms_age_last] <> ""
+[tonic_age_onset] > [tonic_age_last] and [tonic_age_last] <> ""
+[atonic_age_onset] > [atonic_age_last] and [atonic_age_last] <> ""
+[myoclonic_age_onset] > [myoclonic_age_last] and [myoclonic_age_last] <> ""
+[bilateral_clonic_age_onset] > [bilateral_clonic_age_last] and [bilateral_clonic_age_last] <> ""
+[focal_age_onset] > [focal_age_last] and [focal_age_last] <> ""
 
-[absence_age_onset] < [absence_age_last] and
-[atonic_age_onset] < [atonic_age_last] and
-[atypical_absence_age_onset] < [atypical_absence_age_last] and
-[bilateral_clonic_age_onset] < [bilateral_clonic_age_last] and
-[focal_age_onset] < [focal_age_last] and
-[generalized_age_onset] < [generalized_age_last] and
-[hemiclonic_age_onset] < [hemiclonic_age_last] and
-[spasms_age_onset] < [spasms_age_last] and
-[myoclonic_age_onset] < [myoclonic_age_last] and
-[other_age_onset] < [other_age_last] and
-[se_con_age_onset] < [se_con_age_last] and
-[se_non_age_onset] < [se_non_age_last] and
-[tonic_age_onset] < [tonic_age_last] and
-[unclassified_age_onset] < [unclassified_age_last] and
+[hemiclonic_age_onset] > [hemiclonic_age_last] and [hemiclonic_age_last] <> ""
+[unclassified_age_onset] > [unclassified_age_last] and [unclassified_age_last] <> ""
+
+[se_con_age_onset] > [se_con_age_last] and [se_con_age_last] <> ""
+[se_non_age_onset] > [se_non_age_last] and [se_non_age_last] <> ""
+[other_age_onset] > [other_age_last] and [other_age_last] <> ""
