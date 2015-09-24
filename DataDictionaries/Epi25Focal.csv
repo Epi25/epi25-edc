@@ -10,7 +10,7 @@ ethnicity,clinical,,checkbox,Ethnicity,"1, Native Hawaiian/other Pacific Islande
 ethnicity_comments,clinical,,text,Ethnicity comments,,,,,,,,,,,,,
 yob,clinical,,text,Year of birth,,,integer,1900,2020,,,,,,,,
 age_first_seizure,clinical,,text,Age (years) at first seizure,,of any type,integer,0,100,,,,,,,,
-deceased,clinical,,dropdown,Patient deceased,"1, Yes (SUDEP) | 5, Yes (Other epilepsy related - status epilepticus, trauma) | 4, Yes (Unknown causes) | 2, No | 3, Unknown",,,,,,,,,,,,
+deceased,clinical,,dropdown,Patient deceased,"2, No|4, Unknown|1, Yes (SUDEP)|3, Yes (Other epilepsy related - status epilepticus, trauma)|6, Yes (Death unrelated to epilepsy)|9, Yes (Unknown causes)                                                                                                                                                       ",,,,,,,,,,,,
 febrile_seizures,clinical,Seizure Types,radio,Febrile seizures<div class='note'> Seizure of any type (or unknown type) provoked <br>by a documented fever of >38&deg;C/100.4&deg;F</div>,"1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
 aura_seizures,clinical,,radio,"Aura (simple partial) <div class='note'>See [<a target=_""new"" href=""https://www.epilepsydiagnosis.org/seizure/aura-overview.html"">ILAE definition</a>]</div>","1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
 dyscognitive_seizures,clinical,,radio,"Focal dyscognitive (complex partial) <div class='note'>See [<a target=_""new"" href=""https://www.epilepsydiagnosis.org/seizure/dyscognitive-overview.html"">ILAE definition</a>]</div>","1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
