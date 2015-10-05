@@ -22,7 +22,7 @@ tonic_seizures,clinical,,radio,"Tonic<div class='note'>See <a style=""text-decor
 atonic_seizures,clinical,,radio,"Atonic<div class='note'>See <a style=""text-decoration:underline; font-size:7pt;"" href=""https://www.epilepsydiagnosis.org/seizure/atonic-overview.html"" target=""_new"">ILAE definition</a></div>","1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
 other_seizures,clinical,,radio,"Other seizure types, please specify<div class='note'>Generalized seizures of unknown type or rare cases of focal attacks</div>","1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
 other_seizures_specify,clinical,,notes,Other seizure types comments,,,,,,,[other_seizures]=1,,,,,,
-febclassic_seizures,clinical,Febrile seizures,dropdown,Classical febrile seizures,"1, Yes | 2, No | 3, Unknown",Self-limited convulsive seizures with a documented fever of >38 C/100.4 F occurring between the age of 6 months and 6 years with no known history of afebrile seizures.,,,,,[febrile_seizures]=1,,,,,,
+febclassic_seizures,clinical,Febrile seizures,dropdown,Classical febrile seizures,"1, Yes | 2, No | 3, Unknown",Self-limited convulsive seizures with a documented fever of >38°C/100.4°F occurring between the age of 6 months and 6 years with no known history of afebrile seizures.,,,,,[febrile_seizures]=1,,,,,,
 febclassic_age_onset,clinical,,text,Age (years) at first occurrence (classic febrile),,if available,integer,0,100,,[febclassic_seizures]=1,,,,,,Classical febrile seizures
 febclassic_age_last,clinical,,text,Age (years) at last occurrence (classic febrile),,if available,integer,0,100,,[febclassic_seizures]=1,,,,,,Classic febrile seizures
 febprov_seizures,clinical,,dropdown,Other seizures provoked by fever,"1, Yes | 2, No | 3, Unknown",,,,,,[febrile_seizures]=1,,,,,,
