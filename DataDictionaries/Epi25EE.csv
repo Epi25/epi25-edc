@@ -74,7 +74,7 @@ se_con_age_onset,clinical,,text,Age in months at first occurrence (Status Epilep
 se_non_age_onset,clinical,,text,Age in months at first occurrence (Status Epilepticus: Non-convulsive),,,integer,0,100,,[se_non_seizures]=1,,,,,
 tonic_age_onset,clinical,,text,Age in months at first occurrence (Tonic),,,integer,0,100,,[tonic_seizures]=1,,,,,
 unclassified_age_onset,clinical,,text,Age in months at first occurrence (Unclassified),,,integer,0,100,,[unclassified_seizures]=1,,,,,
-absence_age_last,clinical,,text,Age in years at last occurrence (Absence),,,integer,0,100,,[absence_seizures]=1,,,,,
+absence_age_last,clinical,Age in <span style=”color:red”>years</span>  at last occurrence,text,Age in years at last occurrence (Absence),,,integer,0,100,,[absence_seizures]=1,,,,,
 atonic_age_last,clinical,,text,Age in years at last occurrence (Atonic),,,integer,0,100,,[atonic_seizures]=1,,,,,
 atypical_absence_age_last,clinical,,text,Age in years at last occurrence (Atypical Absence),,,integer,0,100,,[atypical_absence_seizures]=1,,,,,
 bilateral_clonic_age_last,clinical,,text,Age in years at last occurrence (Bilateral clonic),,,integer,0,100,,[bilateral_clonic_seizures]=1,,,,,
