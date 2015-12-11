@@ -9,7 +9,6 @@ clinician_responsible,clinical,,text,Clinician responsible for data,,,,,,,,y,,,,
 ethnicity,clinical,,checkbox,Ethnicity,"1, Native Hawaiian/other Pacific Islander | 2, Chinese | 3, Japanese | 4, Asian Other | 5, Black or African American | 6, Western European | 7, Eastern European | 8, Hispanic | 9, French Canadian | 10, Ashkenazi Jewish | 11, Sephardic Jewish | 12, Caucasian other, please specify | 13, Other/mixed ethnicities, please specify | 14, Unknown",,,,,,,,,,,,
 ethnicity_comments,clinical,,text,Ethnicity comments,,,,,,,,,,,,,
 yob,clinical,,text,Year of birth,,,integer,1900,2020,,,y,,,,,
-age_first_seizure,clinical,,text,Age (years) at first seizure,,of any type,integer,0,100,,,y,,,,,
 deceased,clinical,,dropdown,Patient deceased,"2, No|4, Unknown|1, Yes (SUDEP)|3, Yes (Other epilepsy related - status epilepticus, trauma)|6, Yes (Death unrelated to epilepsy)|9, Yes (Unknown causes)                                                                                                                                                       ",,,,,,,,,,,,
 febrile_seizures,clinical,Seizure Types,radio,Febrile seizures<div class='note'> Seizure of any type (or unknown type) provoked <br>by a documented fever of >38°C/100.4°F</div>,"1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
 aura_seizures,clinical,,radio,"Aura (simple partial) <div class='note'>See <a style=""text-decoration:underline; font-size:7pt"" target=_""new"" href=""https://www.epilepsydiagnosis.org/seizure/aura-overview.html"">ILAE definition</a></div>","1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
@@ -19,7 +18,7 @@ other_focal_seizures,clinical,,radio,"Focal other seizure types, please specify<
 other_seizures,clinical,,radio,"Other seizure types, please specify<div class='note'>Seizures of unknown type or rare cases of generalised seizures</div>","1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
 other_seizures_specify,clinical,,notes,Other seizure types comments,,,,,,,[other_seizures]=1 or [other_focal_seizures]=1,,,,,,
 febclassic_seizures,clinical,Febrile seizures,dropdown,Classical febrile seizures,"1, Yes | 2, No | 3, Unknown",Self-limited convulsive seizures with a documented fever of >38C°F/100.4F°F occurring between the age of 6 months and 6 years with no known history of afebrile seizures.,,,,,[febrile_seizures]=1,,,,,,
-febclassic_age_onset,clinical,,text,Age (years) at first occurrence (classic febrile),,if available,integer,0,100,,[febclassic_seizures]=1,,,,,,Classical febrile seizures
+febclassic_age_onset,clinical,,text,Age (years) at first occurrence (classic febrile),,if available,integer,0,7,,[febclassic_seizures]=1,,,,,,Classical febrile seizures
 febclassic_age_last,clinical,,text,Age (years) at last occurrence (classic febrile),,if available,integer,0,100,,[febclassic_seizures]=1,,,,,,Classic febrile seizures
 febprov_seizures,clinical,,dropdown,Other seizures provoked by fever,"1, Yes | 2, No | 3, Unknown",,,,,,[febrile_seizures]=1,,,,,,
 febprov_age_onset,clinical,,text,Age (years) at first occurrence of fever provoked seizures,,if available,integer,0,100,,[febprov_seizures]=1,,,,,,
@@ -27,7 +26,9 @@ febprov_age_last,clinical,,text,Age (years) at last occurrence of fever provoked
 aura_age_onset,clinical,Age of onset,text,Age (years) at first occurrence (aura),,if available,integer,0,100,,[aura_seizures]=1,,,,,,
 dyscognitive_age_onset,clinical,,text,Age (years) at first occurrence (dyscognitive),,if available,integer,0,100,,[dyscognitive_seizures]=1,,,,,,
 bilateral_age_onset,clinical,,text,Age (years) at first occurrence (bilateral),,if available,integer,0,100,,[bilateral_seizures]=1,,,,,,
-other_age_onset,clinical,,text,Age (years) at first occurrence (other),,if available,integer,0,100,,[other_seizures]=1,,,,,,
+other_age_onset,clinical,,text,Age (years) at first occurrence (other),,,integer,0,100,,[other_seizures]=1,,,,,,
+age_first_seizure_comp,clinical,,calc,Age (years) at first seizure,"min([age_first_seizure],[aura_age_onset],[dyscognitive_age_onset],[bilateral_age_onset],[other_age_onset], [febclassic_age_onset],[febprov_age_onset])",Minumum of all seizure onsets (computed),,,,,,,,,,,
+age_first_seizure,clinical,,text,Age (years) of onset correction,,Overrides the age of onset in case type of seizure at onset is not known,integer,0,100,,,,,,,,
 aura_age_last,clinical,Age of last occurrence,text,Age (years) at last occurrence (aura),,if available,integer,0,100,,[aura_seizures]=1,,,,,,
 dyscognitive_age_last,clinical,,text,Age (years) at last occurrence (dyscognitive),,if available,integer,0,100,,[dyscognitive_seizures]=1,,,,,,
 bilateral_age_last,clinical,,text,Age (years) at last occurrence (bilateral),,if available,integer,0,100,,[bilateral_seizures]=1,,,,,,

@@ -10,7 +10,6 @@ ethnicity,clinical,,checkbox,Ethnicity,"1, Native Hawaiian/other Pacific Islande
 ethnicity_comments,clinical,,text,Ethnicity comments,,,,,,,[ethnicity(12)] = '1' or [ethnicity(13)] = '1',,,,,,
 deceased,clinical,,dropdown,Patient deceased,"2, No|4, Unknown|1, Yes (SUDEP)|3, Yes (Other epilepsy related - status epilepticus, trauma)|6, Yes (Death unrelated to epilepsy)|9, Yes (Unknown causes)                                                                                                                                                      ",,,,,,,,,,,,
 yob,clinical,,text,Year of birth,,,integer,1900,2020,,,y,,,,,
-age_first_seizure,clinical,,text,Age (years) at first seizure,,of any type (age in year),integer,0,100,,,y,,,,,
 febrile_seizures,clinical,"Generalized Seizure Types<div class='note'>See <a style=""text-decoration:underline;font-size:7pt"" href=""https://www.epilepsydiagnosis.org/seizure/"">ILAE definition for seizures</a>
 Additional comments about seizure semiology can be added through field comments if desired.</div>",radio,Febrile seizures<div class='note'> Seizure of any type (or unknown type) provoked <br>by a documented fever of >38°C/100.4°F</div>,"1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,"See ILAE definition: https://www.epilepsydiagnosis.org/seizure/atonic-overview.html 
 Additional comments about seizure semiology can be added through REDCap if desired."
@@ -23,7 +22,7 @@ atonic_seizures,clinical,,radio,"Atonic<div class='note'>See <a style=""text-dec
 other_seizures,clinical,,radio,"Other seizure types, please specify<div class='note'>Generalized seizures of unknown type or rare cases of focal attacks</div>","1, Yes | 2, No | 3, Unknown",,,,,,,,,,seizuretypes,,
 other_seizures_specify,clinical,,notes,Other seizure types comments,,,,,,,[other_seizures]=1,,,,,,
 febclassic_seizures,clinical,Febrile seizures,dropdown,Classical febrile seizures,"1, Yes | 2, No | 3, Unknown",Self-limited convulsive seizures with a documented fever of >38°C/100.4°F occurring between the age of 6 months and 6 years with no known history of afebrile seizures.,,,,,[febrile_seizures]=1,,,,,,
-febclassic_age_onset,clinical,,text,Age (years) at first occurrence (classic febrile),,if available,integer,0,100,,[febclassic_seizures]=1,,,,,,Classical febrile seizures
+febclassic_age_onset,clinical,,text,Age (years) at first occurrence (classic febrile),,if available,integer,0,7,,[febclassic_seizures]=1,,,,,,Classical febrile seizures
 febclassic_age_last,clinical,,text,Age (years) at last occurrence (classic febrile),,if available,integer,0,100,,[febclassic_seizures]=1,,,,,,Classic febrile seizures
 febprov_seizures,clinical,,dropdown,Other seizures provoked by fever,"1, Yes | 2, No | 3, Unknown",,,,,,[febrile_seizures]=1,,,,,,
 febprov_age_onset,clinical,,text,Age (years) at first occurrence of fever provoked seizures,,if available,integer,0,100,,[febprov_seizures]=1,,,,,,
@@ -35,6 +34,8 @@ atypical_absence_age_onset,clinical,,text,Age (years) at first occurrence (Atypi
 tonic_age_onset,clinical,,text,Age (years) at first occurrence (tonic),,if available,integer,0,100,,[tonic_seizures]=1,,,,,,
 atonic_age_onset,clinical,,text,Age (years) at first occurrence (Atonic),,if available,integer,0,100,,[atonic_seizures]=1,,,,,,
 other_age_onset,clinical,,text,Age (years) at first occurrence (Other),,if available,integer,0,100,,[other_seizures]=1,,,,,,
+age_first_seizure_comp,clinical,,calc,Age (years) at first seizure,"min([generalized_age_onset], [age_first_seizure],[myoclonic_age_onset], [absence_age_onset],[atypical_absence_age_onset], [tonic_age_onset], [atonic_age_onset], [other_age_onset], [febprov_age_onset],[febclassic_age_onset])",Minumum of all seizure onsets (computed),,,,,,,,,,,
+age_first_seizure,clinical,,text,Age (years) of onset correction,,Overrides the age of onset in case type of seizure at onset is not known,integer,0,100,,,y,,,,,
 generalized_age_last,clinical,Age of last occurrence,text,Age (years) at last occurrence (Generalized tonic-clonic),,if available,integer,0,100,,[generalized_seizures]=1,,,,,,
 myoclonic_age_last,clinical,,text,Age (years) at last occurrence (Myoclonic),,if available,integer,0,100,,[myoclonic_seizures]=1,,,,,,
 absence_age_last,clinical,,text,Age (years) at last occurrence (Absence),,if available,integer,0,100,,[absence_seizures]=1,,,,,,
