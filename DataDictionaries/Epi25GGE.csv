@@ -35,7 +35,7 @@ atypical_absence_age_onset,clinical,,text,Age (years) at first occurrence (Atypi
 tonic_age_onset,clinical,,text,Age (years) at first occurrence (tonic),,if available,integer,0,100,,[tonic_seizures]=1,,,,,,
 atonic_age_onset,clinical,,text,Age (years) at first occurrence (Atonic),,if available,integer,0,100,,[atonic_seizures]=1,,,,,,
 other_age_onset,clinical,,text,Age (years) at first occurrence (Other),,if available,integer,0,100,,[other_seizures]=1,,,,,,
-age_first_seizure_comp,clinical,,calc,Age (years) at first seizure,"min([generalized_age_onset], [age_first_seizure],[myoclonic_age_onset], [absence_age_onset],[atypical_absence_age_onset], [tonic_age_onset], [atonic_age_onset], [other_age_onset], [febprov_age_onset],[febclassic_age_onset])",Minumum of all seizure onsets (computed),,,,,,,,,,,
+age_first_seizure_comp,clinical,,calc,Age (years) at first seizure,"min([generalized_age_onset], [age_first_seizure],[myoclonic_age_onset], [absence_age_onset],[atypical_absence_age_onset], [tonic_age_onset], [atonic_age_onset], [other_age_onset], [febprov_age_onset])",Minumum of all seizure onsets (computed),,,,,,,,,,,
 age_first_seizure,clinical,,text,Age (years) of onset correction,,Overrides the age of onset in case type of seizure at onset is not known,integer,0,100,,,y,,,,,
 generalized_age_last,clinical,Age of last occurrence,text,Age (years) at last occurrence (Generalized tonic-clonic),,if available,integer,0,100,,[generalized_seizures]=1,,,,,,
 myoclonic_age_last,clinical,,text,Age (years) at last occurrence (Myoclonic),,if available,integer,0,100,,[myoclonic_seizures]=1,,,,,,
