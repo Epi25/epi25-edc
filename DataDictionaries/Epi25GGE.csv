@@ -9,7 +9,7 @@ ethnicity,clinical,,checkbox,Ethnicity,"1, Native Hawaiian/other Pacific Islande
 ethnicity_comments,clinical,,text,Ethnicity comments,,,,,,,,,,,,,
 yob,clinical,,text,Year of birth,,,integer,1900,2020,,,y,,,,,
 deceased,clinical,,dropdown,Patient deceased,"2, No|998, Unknown|1, Yes (SUDEP)|3, Yes (Other epilepsy related - status epilepticus, trauma)|6, Yes (Death unrelated to epilepsy)|9, Yes (Unknown causes)                                                                                                                                                       ",,,,,,,,,,,,
-exome_available,clinical,,dropdown,Existing exome data,"1, Yes | 2, No | 998, Unknown",applies to exome data sequenced after 1st Jan 2013 only,,,,,,,,,,,
+exome_available,clinical,,dropdown,Existing exome data,"1, Yes | 2, No | 998, Unknown",Applies to exome data sequenced after 1st Jan 2013 only,,,,,,,,,,,
 febrile_seizures,clinical,"Generalized Seizure Types<div class='note'>See <a style=""text-decoration:underline;font-size:7pt"" href=""https://www.epilepsydiagnosis.org/seizure/"">ILAE definition for seizures</a>
 Additional comments about seizure semiology can be added through field comments if desired.</div>",radio,Febrile seizures<div class='note'> Seizure of any type (or unknown type) provoked <br>by a documented fever of >38°C/100.4°F</div>,"1, Yes | 2, No | 998, Unknown",,,,,,,,,,seizuretypes,,"See ILAE definition: https://www.epilepsydiagnosis.org/seizure/atonic-overview.html 
 Additional comments about seizure semiology can be added through REDCap if desired."
@@ -27,7 +27,7 @@ febclassic_age_last,clinical,,text,Age (years) at last occurrence (classic febri
 febprov_seizures,clinical,,dropdown,Other seizures provoked by fever,"1, Yes | 2, No | 998, Unknown",,,,,,[febrile_seizures]=1,,,,,,
 febprov_age_onset,clinical,,text,Age (years) at first occurrence of fever provoked seizures,,if available,integer,-9,100,,[febprov_seizures]=1,,,,,,
 febprov_age_last,clinical,,text,Age (years) at last occurrence of fever provoked seizures,,if available,integer,-9,100,,[febprov_seizures]=1,,,,,,
-generalized_age_onset,clinical,Age of onset<div class=”note”>”Enter -9 if time of onset in unknown beyond a span of 12month”</div>,text,Age (years) at first occurrence (Generalized tonic-clonic),,if available,integer,-9,100,,[generalized_seizures]=1,,,,,,
+generalized_age_onset,clinical,Age of onset<div class=”note”>Enter -9 if time of onset in unknown beyond a span of 12month</div>,text,Age (years) at first occurrence (Generalized tonic-clonic),,if available,integer,-9,100,,[generalized_seizures]=1,,,,,,
 myoclonic_age_onset,clinical,,text,Age (years) at first occurrence (Myoclonic),,if available,integer,-9,100,,[myoclonic_seizures]=1,,,,,,
 absence_age_onset,clinical,,text,Age (years) at first occurrence (Absence),,if available,integer,-9,100,,[absence_seizures]=1,,,,,,
 atypical_absence_age_onset,clinical,,text,Age (years) at first occurrence (Atypical absence),,if available,integer,-9,100,,[atypical_absence_seizures]=1,,,,,,
