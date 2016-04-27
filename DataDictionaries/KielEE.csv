@@ -134,5 +134,5 @@ fam_first_deg,epi25,,dropdown,First degree relative affected,"1, Yes | 2, No | 9
 fam_notes,epi25,,notes,Details of family history of epilepsy,,"Additional information about family history, other than that captured in the 'First degree relative affected?' section.",,,,,[family_history]=1,,,,,
 multiple_syndromes,epi25,,notes,"Comments for multiple syndromes 
 
-",,,,,,,([ee_syndrome(2)]+ [ee_syndrome(1)]  +[ee_syndrome(3)]+ [ee_syndrome(4)] + [ee_syndrome(5)]+ [ee_syndrome(6)] + [ee_syndrome(7)] + [ee_syndrome(8)]  +[ee_syndrome(9)]+ [ee_syndrome(10)] + [ee_syndrome(11)] + [ee_syndrome(12)] + [ee_syndrome(13)]+ [ee_syndrome(14)]  + [ee_syndrome(15)]+ [ee_syndrome(16)]  ) >1,,,,,
-ee_syndrome_notes,epi25,,notes,Epilepsy syndrome comments,,"In cases where an evolution has occurred, multiple syndromes should be selected and a comment made.",,,,,,,,,,
+",,,,,,,([phenotype(2)]+ [phenotype(1)]  +[phenotype(3)]+ [phenotype(4)] + [phenotype(5)]+ [phenotype(6)] + [phenotype(7)] + [phenotype(8)]  +[phenotype(9)]+ [phenotype(10)] + [phenotype(11)] + [phenotype(12)] + [phenotype(13)]+ [phenotype(14)]  + [phenotype(15)]+ [phenotype(16)]  ) >1,,,,,
+phenotype_notes,epi25,,notes,Epilepsy syndrome comments,,"In cases where an evolution has occurred, multiple syndromes should be selected and a comment made.",,,,,,,,,,
