@@ -9,8 +9,6 @@ hispanic_status,clinical,,radio,Hispanic/Latino status,"1, Hispanic or Latino or
 ethnicity,clinical,,checkbox,Ethnicity,"1, Native Hawaiian/other Pacific Islander | 2, Chinese | 3, Japanese | 4, Asian Other | 5, Black or African American | 6, Western European | 7, Eastern European  | 9, French Canadian | 10, Ashkenazi Jewish | 11, Sephardic Jewish | 12, Caucasian other, please specify | 13, Other/mixed ethnicities, please specify | 998, Unknown",Ethnicity category to be selected from list provided. The list of ethnicity categories contains the minimum acceptable categories as per the USA standards.,,,,,,,,,,,
 ethnicity_comments,clinical,,text,Ethnicity comments,,,,,,,,,,,,,
 yob,clinical,,text,Year of birth,,,integer,1900,2020,,,y,,,,,
-maternal_dna,clinical,,dropdown,Maternal DNA available,"1, Yes | 2, No | 998, Unknown",,,,,,,y,,,,,
-paternal_dna,clinical,,dropdown,Paternal DNA available,"1, Yes | 2, No | 998, Unknown",,,,,,,y,,,,,
 exome_available,clinical,,dropdown,Existing exome data,"1, Yes | 2, No | 998, Unknown",applies to exome data sequenced after 1st Jan 2013 only,,,,,,,,,,,
 deceased,clinical,,dropdown,Patient deceased,"2, No|998, Unknown|1, Yes (SUDEP)|3, Yes (Other epilepsy related - status epilepticus, trauma)|6, Yes (Death unrelated to epilepsy)|9, Yes (Unknown causes)                                                                                                                                                       ",,,,,,,,,,,,
 febrile_seizures,clinical,Seizure Types,radio,Febrile seizures<div class='note'> Seizure of any type (or unknown type) provoked <br>by a documented fever of >38°C/100.4°F</div>,"1, Yes | 2, No | 998, Unknown",,,,,,,,,,seizuretypes,,
