@@ -1,2 +1,6 @@
-# epi25
-Support code for the Epi25 project
+# Epi25 data dictionaries for REDCap
+
+Setup for the Epi25 project
+- Data dictionaries
+- Glossaries
+- Issue tracking
