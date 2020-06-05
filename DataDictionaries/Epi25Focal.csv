@@ -1,9 +1,10 @@
 ﻿"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
-record_id,clinical,,text,"Record ID",,,,,,,,,,,,,
+record_id,clinical,,text,"Collaborator Participant ID",,,,,,,,,,,,,
 local_identifier,clinical,,text,"Local Identifier",,"Sample identifier as allocated by the group contributing the sample.",,,,,,,,,,,
+broad_id,clinical,,text,"Broad Sample ID",,,,,,,,,,,,,
 date_last_collection,clinical,,text,"Date of last data collection",,"Most recent date that information was collected that has been used to complete the form.<br>Use 01 (Jan) as month or 01 as day if said information is missing.",date_ymd,,,,,y,,,,,
 sex,clinical,,dropdown,Sex,"1, Male | 2, Female | 998, Unknown | 995, Other",,,,,,,y,,,,,
-clinician_dataentry,clinical,,text,"Person completing form",,"Clinician or researcher completing the form.",,,,,,y,,,,,
+clinician_dataentry,clinical,,text,"Person completing form",,"Clinician or researcher completing the form.",,,,,,y,,,,," @USERNAME"
 clinician_responsible,clinical,,text,"Clinician responsible for data",,,,,,,,y,,,,,
 hispanic_status,clinical,,radio,"Hispanic/Latino status","1, Hispanic or Latino origin | 2, Not of Hispanic or Latino origin | 998, Unknown | 4, Not reported",,,,,,,,,,,,
 ethnicity,clinical,,checkbox,Ethnicity,"1, Native Hawaiian/other Pacific Islander | 2, Chinese | 3, Japanese | 4, Asian Other | 5, Black or African American | 6, Western European | 7, Eastern European  | 9, French Canadian | 10, Ashkenazi Jewish | 11, Sephardic Jewish | 12, Caucasian other, please specify | 13, Other/mixed ethnicities, please specify | 998, Unknown","Ethnicity category to be selected from list provided. The list of ethnicity categories contains the minimum acceptable categories as per the USA standards.",,,,,,,,,,,
