@@ -50,3 +50,7 @@ Age of onset and latest incidence (febrile seizures)
 [se_con_age_onset] > [se_con_age_last] and [se_con_age_last] <> ""
 [se_non_age_onset] > [se_non_age_last] and [se_non_age_last] <> ""
 [other_age_onset] > [other_age_last] and [other_age_last] <> ""
+
+[ee_syndrome(1)] =1 AND
+[ee_syndrome(2)] =1 AND
+[ee_syndrome(3)] =1
