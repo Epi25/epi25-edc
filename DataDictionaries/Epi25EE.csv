@@ -1,9 +1,10 @@
 "Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
-record_id,clinical,,text,"Record ID",,,,,,,,,,,,,
+record_id,clinical,,text,"Collaborator Participant ID",,,,,,,,,,,,,
 local_identifier,clinical,,text,"Local Identifier",,"Sample identifier as allocated by the group contributing the sample.",,,,,,,,,,,
+broad_id,clinical,,text,"Broad Sample ID",,,,,,,,,,,,,
 date_last_collection,clinical,,text,"Date of last data collection",,"Most recent date that information was collected that has been used to complete the form.<br>Use 01 (Jan) as month or 01 as day if said information is missing.",date_ymd,,,,,y,,,,,
 sex,clinical,,dropdown,Sex,"1, Male | 2, Female | 998, Unknown | 995, Other",,,,,,,y,,,,,
-clinician_dataentry,clinical,,text,"Person completing form",,,,,,,,y,,,,,
+clinician_dataentry,clinical,,text,"Person completing form",,,,,,,,y,,,,," @USERNAME"
 clinician_responsible,clinical,,text,"Clinician responsible for data",,,,,,,,y,,,,,
 hispanic_status,clinical,,radio,"Hispanic/Latino status","1, Hispanic or Latino origin | 2, Not of Hispanic or Latino origin | 998, Unknown | 4, Not reported",,,,,,,,,,,,
 ethnicity,clinical,,checkbox,Ethnicity,"1, Native Hawaiian/other Pacific Islander | 2, Chinese | 3, Japanese | 4, Asian Other | 5, Black or African American | 6, Western European | 7, Eastern European | 8, Hispanic | 9, French Canadian | 10, Ashkenazi Jewish | 11, Sephardic Jewish | 12, Caucasian other, please specify | 13, Other/mixed ethnicities, please specify | 998, Unknown",,,,,,,,,,,,
@@ -125,7 +126,7 @@ autism,clinical,,radio,"Autism spectrum disorder","1, Yes | 2, No | 998, Unknown
 psychosis,clinical,,radio,Psychosis,"1, Yes | 2, No | 998, Unknown",,,,,,,,,,comorbidities,,
 pharmacoresistant,clinical,,radio,"Drug resistant<div class='note'>Failure of adequate trials of two tolerated and appropriately chosen and used AED schedules (whether as monotherapies or in combination) to achieve sustained seizure freedom (see <a style=""text-decoration:underline;font-size:7pt;"" class='note' href=""http://dx.doi.org/10.1111/j.1528-1167.2009.02397.x"" target='_new'>Kwan, P. et al, Epilepsia 2010</a>)</div>","1, Yes | 2, No | 998, Unknown",,,,,,,,,,comorbidities,,
 developmental_delay_type,clinical,,dropdown,"Type of delay","1, Motor|2, Speech and Language|998, Unknown | 4, Global",,,,,,[developmental_delay]=1,,,,,,
-regression_age,clinical,,text,"Age at regression in months if known",,,integer,0,200,,[regression]=1,,,,,,
+regression_age,clinical,,text,"Age at regression in months if known",,,number,0,200,,[regression]=1,,,,,,
 intellectual_disability_degree,clinical,,dropdown,"Degree of intellectual disability","1, mild| 2,moderate|3,severe|4 ,profound |5, cannot classify",,,,,,[intellectual_disability]=1,,,,,,
 fam_consanguinity,clinical,"Family History",dropdown,"Reported family history of consanguinity","1, Yes | 2, No | 998, Unknown",,,,,,,,,,,,
 family_history,clinical,,dropdown,"Family History","1, Yes | 2, No | 998, Unknown","Family history of any seizures (including febrile) regardless of reported aetiology. Family history refers to any biological relative of the proband, including their offspring.",,,,,,,,,,,
@@ -136,3 +137,751 @@ multiple_syndromes,clinical,,notes,"Comments for multiple syndromes
 
 ",,,,,,,"([ee_syndrome(2)]+ [ee_syndrome(1)]  +[ee_syndrome(3)]+ [ee_syndrome(4)] + [ee_syndrome(5)]+ [ee_syndrome(6)] + [ee_syndrome(7)] + [ee_syndrome(8)]  +[ee_syndrome(9)]+ [ee_syndrome(10)] + [ee_syndrome(11)] + [ee_syndrome(12)] + [ee_syndrome(13)]+ [ee_syndrome(14)]  + [ee_syndrome(15)]+ [ee_syndrome(16)]  ) >1",,,,,,
 ee_syndrome_notes,clinical,,notes,"Epilepsy syndrome comments",,"In cases where an evolution has occurred, multiple syndromes should be selected and a comment made.",,,,,,,,,,,
+qc_ucsf,qc,,dropdown,"Exclude status 2019","1, PASS | 2, EXCLUDE",,,,,,,,,,,,
+qc_review,qc,,radio,"Manual review","1, Pass | 2, In progress | 3, Failed",,,,,,,,,,,,
+qc_comment,qc,,notes,Comment,,,,,,,,,,,,,
+unclassified_epilepsy,qc,,dropdown,"Unclassified epilepsy","1, Yes | 2, No","To be filled in QC process after data entry",,,,,,,,,,,
+hc_ee,analysis_hierarchy,,calc,"Hierarchical classification","if([ee_syndrome(1)]=1 OR
+[ee_syndrome(2)]=1 OR
+[ee_syndrome(3)]=1 OR
+[ee_syndrome(4)]=1 OR
+[ee_syndrome(5)]=1 OR
+[ee_syndrome(6)]=1 OR
+[ee_syndrome(7)]=1 OR
+[ee_syndrome(8)]=1 OR
+[ee_syndrome(9)]=1 OR
+[ee_syndrome(10)]=1 OR
+[ee_syndrome(11)]=1 OR
+[ee_syndrome(12)]=1 OR
+[ee_syndrome(13)]=1 OR
+[ee_syndrome(14)]=1 OR
+[ee_syndrome(15)]=1 OR
+[ee_syndrome(16)]=1 OR
+[ee_syndrome(17)]=1, 1, 0)",,,,,,,,,,,,
+ee,analysis_hierarchy,,calc,"3 EE","if([lesional] = 1 or [non_lesional]= 1, 1, 0)",,,,,,,,,,,,
+lesional,analysis_hierarchy,,calc,"3.1 Lesional","if([mcd]= 1 or [acquired]= 1, 1, 0)",,,,,,,,,,,,
+mcd,analysis_hierarchy,,calc,"3.1.1 MCD","if( [neuroimaging_findings_1] >1 AND [neuroimaging_findings_1] < 15 OR
+[neuroimaging_findings_2] >1 AND [neuroimaging_findings_2] < 15 OR
+[neuroimaging_findings_3] >1 AND [neuroimaging_findings_3] < 15,
+1, 0
+)","Malformations of cortical development  ",,,,,,,,,,,
+fcd,analysis_hierarchy,,calc,"3.1.1.1 FCD","if([neuroimaging_findings_1] = 2 OR
+[neuroimaging_findings_2] = 2 OR
+[neuroimaging_findings_3] = 2, 1, 0
+)","Focal cortical dysplasia",,,,,,,,,,,
+heterotopia,analysis_hierarchy,,calc,"3.1.1.2 Heterotopia","if(
+[neuroimaging_findings_1]= 3 OR
+[neuroimaging_findings_2]= 3 OR
+[neuroimaging_findings_3]= 3, 1, 0)",,,,,,,,,,,,
+pvnh,analysis_hierarchy,,calc,"3.1.1.3 PVNH ","if([neuroimaging_findings_1]= 4 OR
+[neuroimaging_findings_2]= 4 OR
+[neuroimaging_findings_3]= 4, 1, 0
+)","Periventricular nodular heterotopia",,,,,,,,,,,
+pmg,analysis_hierarchy,,calc,"3.1.1.4 PMG ","if([neuroimaging_findings_1]= 5 OR
+[neuroimaging_findings_2]= 5 OR
+[neuroimaging_findings_3]= 5, 1, 0)",Polymicrogyria,,,,,,,,,,,
+pachygyria,analysis_hierarchy,,calc,"3.1.1.5 Pachygyria","if([neuroimaging_findings_1]= 6 OR
+[neuroimaging_findings_2]= 6 OR
+[neuroimaging_findings_3]= 6 , 1, 0)",,,,,,,,,,,,
+hemimegalencephaly,analysis_hierarchy,,calc,"3.1.1.6 Hemimegalencephaly","if([neuroimaging_findings_1]= 7 OR
+[neuroimaging_findings_2]= 7 OR
+[neuroimaging_findings_3]= 7, 1, 0)",,,,,,,,,,,,
+schizencephaly,analysis_hierarchy,,calc,"3.1.1.7 Schizencephaly","if([neuroimaging_findings_1]= 8 OR
+[neuroimaging_findings_2]= 8 OR
+[neuroimaging_findings_3]= 8, 1, 0)",,,,,,,,,,,,
+lissencephaly,analysis_hierarchy,,calc,"3.1.1.8 Lissencephaly","if([neuroimaging_findings_1]= 9 OR
+[neuroimaging_findings_2]= 9 OR
+[neuroimaging_findings_3]= 9, 1, 0)",,,,,,,,,,,,
+double_cortex,analysis_hierarchy,,calc,"3.1.1.9 Double cortex","if([neuroimaging_findings_1]= 10 OR
+[neuroimaging_findings_2]= 10 OR
+[neuroimaging_findings_3]= 10, 1, 0)",,,,,,,,,,,,
+holoprosencephaly,analysis_hierarchy,,calc,"3.1.1.10 Holoprosencephaly","if([neuroimaging_findings_1]= 11 OR
+[neuroimaging_findings_2]= 11 OR
+[neuroimaging_findings_3]= 11, 1, 0)",,,,,,,,,,,,
+corpus_callous_genesis_dys,analysis_hierarchy,,calc,"3.1.1.11 Corpus callous Genesis/dysplasia","if([neuroimaging_findings_1]= 12 OR
+[neuroimaging_findings_2]= 12 OR
+[neuroimaging_findings_3]= 12, 1, 0)",,,,,,,,,,,,
+septo_optic_dysplasia,analysis_hierarchy,,calc,"3.1.1.12 Septo-optic dysplasia","if([neuroimaging_findings_1]= 13 OR
+[neuroimaging_findings_2]= 13 OR
+[neuroimaging_findings_3]= 13, 1, 0)",,,,,,,,,,,,
+other_malformation,analysis_hierarchy,,calc,"3.1.1.13 Other malformation","if([neuroimaging_findings_1]= 14 OR
+[neuroimaging_findings_2]= 14 OR
+[neuroimaging_findings_3]= 14, 1, 0)",,,,,,,,,,,,
+acquired,analysis_hierarchy,,calc,"3.1.2 Acquired","if([neuroimaging_findings_1] = 15 OR
+[neuroimaging_findings_1] =16 OR
+[neuroimaging_findings_1] =17 OR
+[neuroimaging_findings_1] =19 OR
+[neuroimaging_findings_1] = 20 OR
+
+[neuroimaging_findings_2] = 15 OR
+[neuroimaging_findings_2] =16 OR
+[neuroimaging_findings_2] =17 OR
+[neuroimaging_findings_2] =19 OR
+[neuroimaging_findings_2] = 20 OR
+
+[neuroimaging_findings_3] = 15 OR
+[neuroimaging_findings_3] =16 OR
+[neuroimaging_findings_3] =17 OR
+[neuroimaging_findings_3] =19 OR
+[neuroimaging_findings_3] = 20, 1, 0
+)",,,,,,,,,,,,
+perivent_leukomalacia,analysis_hierarchy,,calc,"3.1.2.1 Periventricular leukomalacia","if([neuroimaging_findings_1]= 16 OR
+[neuroimaging_findings_2]= 16 OR
+[neuroimaging_findings_3]= 16, 1, 0)",,,,,,,,,,,,
+hypoxic_ischaemic_injury,analysis_hierarchy,,calc,"3.1.2.2 Hypoxic ischaemic injury","if([neuroimaging_findings_1]= 15 OR
+[neuroimaging_findings_2]= 15 OR
+[neuroimaging_findings_3]= 15, 1, 0)",,,,,,,,,,,,
+haemorrhage,analysis_hierarchy,,calc,"3.1.2.3 Haemorrhage","if([neuroimaging_findings_1]= 17 OR
+[neuroimaging_findings_2]= 17 OR
+[neuroimaging_findings_3]= 17, 1, 0)",,,,,,,,,,,,
+porencephaly,analysis_hierarchy,,calc,"3.1.2.4 Porencephaly","if([neuroimaging_findings_1]= 19 OR
+[neuroimaging_findings_2]= 19 OR
+[neuroimaging_findings_3]= 19, 1, 0)",,,,,,,,,,,,
+hydrocephalus,analysis_hierarchy,,calc,"3.1.2.5 Hydrocephalus","if([neuroimaging_findings_1]= 20 OR
+[neuroimaging_findings_2]= 20 OR
+[neuroimaging_findings_3]= 20, 1, 0)",,,,,,,,,,,,
+non_lesional,analysis_hierarchy,,calc,"3.2 Non-lesional","if(
+([neuroimaging_findings_1]= 1 OR
+[neuroimaging_findings_1]= 18 OR
+[neuroimaging_findings_1]= 21 OR
+[neuroimaging_findings_1]= 23 OR
+[neuroimaging_findings_2]= 1 OR
+[neuroimaging_findings_2]= 18 OR
+[neuroimaging_findings_2]= 21 OR
+[neuroimaging_findings_2]= 23 OR
+[neuroimaging_findings_3]= 1 OR
+[neuroimaging_findings_3]= 18 OR
+[neuroimaging_findings_3]= 21 OR
+[neuroimaging_findings_3]= 23)
+AND
+([ee_syndrome(1)] = 1 OR
+[ee_syndrome(2)] = 1 OR
+[ee_syndrome(3)] = 1 OR
+[ee_syndrome(4)] = 1 OR
+[ee_syndrome(5)] = 1 OR
+[ee_syndrome(6)] = 1 OR
+[ee_syndrome(7)] = 1 OR
+[ee_syndrome(8)] = 1 OR
+[ee_syndrome(9)] = 1 OR
+[ee_syndrome(10)] = 1 OR
+[ee_syndrome(11)] = 1 OR
+[ee_syndrome(12)] = 1 OR
+[ee_syndrome(13)] = 1 OR
+[ee_syndrome(14)] = 1 OR
+[ee_syndrome(15)] = 1 OR
+[ee_syndrome(16)] = 1 OR
+[ee_syndrome(17)] = 1 ), 1, 0)",,,,,,,,,,,,
+west_lgs,analysis_hierarchy,,calc,"3.2.1 West/LGS","if(([ee_syndrome(7)] = 1 OR
+[ee_syndrome(8)] = 1 OR
+[ee_syndrome(9)] = 1) AND
+([neuroimaging_findings_1]= 1 OR
+[neuroimaging_findings_1]= 18 OR
+[neuroimaging_findings_1]= 21 OR
+[neuroimaging_findings_1]= 23 OR
+[neuroimaging_findings_2]= 1 OR
+[neuroimaging_findings_2]= 18 OR
+[neuroimaging_findings_2]= 21 OR
+[neuroimaging_findings_2]= 23 OR
+
+[neuroimaging_findings_3]= 1 OR
+[neuroimaging_findings_3]= 18 OR
+[neuroimaging_findings_3]= 21 OR
+[neuroimaging_findings_3]= 23), 1,0)","West/Lennox-Gastaut syndrome",,,,,,,,,,,
+west_syndrome,analysis_hierarchy,,calc,"3.2.1.1 West syndrome","if(
+[ee_syndrome(7)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)",,,,,,,,,,,,
+lgs,analysis_hierarchy,,calc,"3.2.1.2 LGS","if(
+[ee_syndrome(9)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)","Lennox-Gastaut syndrome",,,,,,,,,,,
+late_onset_spasm,analysis_hierarchy,,calc,"3.2.1.4 Late onset spasm","if(
+[ee_syndrome(8)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)",,,,,,,,,,,,
+mae,analysis_hierarchy,,calc,"3.2.2 MAE","if(
+[ee_syndrome(10)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)","Myoclonic atonic epilepsy",,,,,,,,,,,
+csws_lks,analysis_hierarchy,,calc,"3.2.3 CSWS/LKS","if(
+[ee_syndrome(13)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)","Continuous spikes and waves during slow wave sleep/Landau-Kleffner syndrome",,,,,,,,,,,
+csws,analysis_hierarchy,,calc,"3.2.3.1 CSWS","if(
+[ee_syndrome(13)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)","Continuous spikes and waves during slow wave sleep ",,,,,,,,,,,
+lks,analysis_hierarchy,,calc,"3.2.3.2 LKS","if(
+[ee_syndrome(12)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)","Landau-Kleffner syndrome",,,,,,,,,,,
+dravet,analysis_hierarchy,,calc,"3.2.4 Dravet","if(
+[ee_syndrome(11)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)",,,,,,,,,,,,
+hemiconvulsion_hemiplegia,analysis_hierarchy,,calc,"3.2.5 Hemiconvulsion hemiplegia","if(
+[ee_syndrome(2)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)",,,,,,,,,,,,
+fires,analysis_hierarchy,,calc,"3.2.6 FIRES","if(
+[ee_syndrome(14)]= 1 AND ([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23), 1, 0)","Febrile infection-related epilepsy syndrome",,,,,,,,,,,
+less_3_mth_onset,analysis_hierarchy,,calc,"3.2.7 less_3_mth_onset","if(
+(([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+([ee_syndrome(1)]= 1 OR
+[ee_syndrome(3)]= 1 OR
+[ee_syndrome(4)]= 1 )) OR
+
+(([ee_syndrome(15)]= 1 OR
+[ee_syndrome(17)]= 1 
+) AND
+
+([febprov_age_onset] < 3 OR
+[absence_age_onset] < 3 OR
+[atonic_age_onset] < 3 OR
+[atypical_absence_age_onset] < 3 OR
+[bilateral_clonic_age_onset] < 3 OR
+[focal_age_onset] < 3 OR
+[generalized_age_onset] < 3 OR
+[hemiclonic_age_onset] < 3 OR
+[spasms_age_onset] < 3 OR
+[myoclonic_age_onset] < 3 OR
+[other_age_onset] < 3 OR
+[se_con_age_onset] < 3 OR
+[se_non_age_onset] < 3 OR
+[tonic_age_onset] < 3 OR
+[unclassified_age_onset] < 3
+) AND
+
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23)), 1, 0)",,,,,,,,,,,,
+early_onset_e_enceph,analysis_hierarchy,,calc,"3.2.7.1 Early onset epileptic encephalopathy","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[ee_syndrome(4)]= 1, 1, 0)",,,,,,,,,,,,
+ohtahara_syndrome,analysis_hierarchy,,calc,"3.2.7.2 Ohtahara syndrome","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[ee_syndrome(1)]= 1 , 1, 0)",,,,,,,,,,,,
+early_myoclonic_e_enceph,analysis_hierarchy,,calc,"3.2.7.3 Early myoclonic epileptic encephalopathy","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[ee_syndrome(3)]= 1, 1, 0)",,,,,,,,,,,,
+focal_e_enceph_3mth,analysis_hierarchy,,calc,"3.2.7.4 Focal epileptic encephalopathy 3mth","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[focal_age_onset] < 3 AND
+
+[ee_syndrome(15)]= 1, 1, 0)",,,,,,,,,,,,
+generalized_e_enceph_3mth,analysis_hierarchy,,calc,"3.2.7.5 Generalized epileptic encephalopathy 3mth","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[generalized_age_onset] < 3 AND
+
+[ee_syndrome(16)]= 1 , 1, 0)",,,,,,,,,,,,
+mix_unclass_e_enceph,analysis_hierarchy,,calc,"3.2.7.6 Mixed/unclassified epileptic encephalopathy 3mth","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+([febprov_age_onset] < 3 OR
+[absence_age_onset] < 3 OR
+[atonic_age_onset] < 3 OR
+[atypical_absence_age_onset] < 3 OR
+[bilateral_clonic_age_onset] < 3 OR
+[focal_age_onset] < 3 OR
+[generalized_age_onset] < 3 OR
+[hemiclonic_age_onset] < 3 OR
+[spasms_age_onset] < 3 OR
+[myoclonic_age_onset] < 3 OR
+[other_age_onset] < 3 OR
+[se_con_age_onset] < 3 OR
+[se_non_age_onset] < 3 OR
+[tonic_age_onset] < 3 OR
+[unclassified_age_onset] < 3
+) AND
+
+[ee_syndrome(17)]= 1 , 1, 0)",,,,,,,,,,,,
+between_3_12_mth_onset,analysis_hierarchy,,calc,"3.2.8 Between 3-12 mth onset","if(
+(([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+([ee_syndrome(5)]= 1 OR
+[ee_syndrome(6)]= 1 )) OR
+
+(
+([ee_syndrome(15)]= 1 OR
+[ee_syndrome(17)]= 1 
+) AND
+
+(
+if([febprov_age_onset] > 3 AND [febprov_age_onset] < 12, 1, 0) OR
+if([absence_age_onset] > 3 AND [absence_age_onset] < 12, 1, 0) OR
+if([atonic_age_onset] > 3 AND [atonic_age_onset] < 12, 1, 0) OR
+if([atypical_absence_age_onset] > 3 AND [atypical_absence_age_onset] < 12, 1, 0) OR
+if([bilateral_clonic_age_onset] > 3 AND [bilateral_clonic_age_onset] < 12, 1, 0) OR
+if([focal_age_onset] > 3 AND [focal_age_onset] < 12, 1, 0) OR
+if([generalized_age_onset] > 3 AND [generalized_age_onset] < 12, 1, 0) OR
+if([hemiclonic_age_onset] > 3 AND [hemiclonic_age_onset] < 12, 1, 0) OR
+if([spasms_age_onset] > 3 AND [spasms_age_onset] < 12, 1, 0) OR
+if([myoclonic_age_onset] > 3 AND [myoclonic_age_onset] < 12, 1, 0) OR
+if([other_age_onset] > 3 AND [other_age_onset] < 12, 1, 0) OR
+if([se_con_age_onset] > 3 AND [se_con_age_onset] < 12, 1, 0) OR
+if([se_non_age_onset] > 3 AND [se_non_age_onset] < 12, 1, 0) OR
+if([tonic_age_onset] > 3 AND [tonic_age_onset] < 12, 1, 0) OR
+if([unclassified_age_onset] > 3 AND [unclassified_age_onset] < 12, 1, 0)) AND
+
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23)), 1, 0)",,,,,,,,,,,,
+infantile_onset_e_enceph,analysis_hierarchy,,calc,"3.2.8.1 Infantile onset epileptic encephalopathy","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[ee_syndrome(5)]= 1, 1, 0)",,,,,,,,,,,,
+e_infancy_mig_foc_seiz,analysis_hierarchy,,calc,"3.2.8.2 Epilepsy of infancy with migrating focal seizures","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[ee_syndrome(6)]= 1, 1, 0)",,,,,,,,,,,,
+focal_e_enceph_3_12mth,analysis_hierarchy,,calc,"3.2.8.3 Focal epileptic encephalopathy 3-12 mth","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+if([focal_age_onset] > 3 AND [focal_age_onset] < 12, 1, 0) AND
+
+[ee_syndrome(15)]= 1, 1, 0)",,,,,,,,,,,,
+general_e_enceph_3_12mth,analysis_hierarchy,,calc,"3.2.8.4 Generalized epileptic encephalopathy 3-12 mth","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+if([generalized_age_onset] > 3 AND [generalized_age_onset] < 12, 1, 0) AND
+
+[ee_syndrome(16)]= 1, 1, 0)",,,,,,,,,,,,
+mix_unclass_enceph_3_12mth,analysis_hierarchy,,calc,"3.2.8.5 Mixed/unclassified epileptic encephalopathy 3-12 mth","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+(
+if([febprov_age_onset] > 3 AND [febprov_age_onset] < 12, 1, 0) OR
+if([absence_age_onset] > 3 AND [absence_age_onset] < 12, 1, 0) OR
+if([atonic_age_onset] > 3 AND [atonic_age_onset] < 12, 1, 0) OR
+if([atypical_absence_age_onset] > 3 AND [atypical_absence_age_onset] < 12, 1, 0) OR
+if([bilateral_clonic_age_onset] > 3 AND [bilateral_clonic_age_onset] < 12, 1, 0) OR
+if([focal_age_onset] > 3 AND [focal_age_onset] < 12, 1, 0) OR
+if([generalized_age_onset] > 3 AND [generalized_age_onset] < 12, 1, 0) OR
+if([hemiclonic_age_onset] > 3 AND [hemiclonic_age_onset] < 12, 1, 0) OR
+if([spasms_age_onset] > 3 AND [spasms_age_onset] < 12, 1, 0) OR
+if([myoclonic_age_onset] > 3 AND [myoclonic_age_onset] < 12, 1, 0) OR
+if([other_age_onset] > 3 AND [other_age_onset] < 12, 1, 0) OR
+if([se_con_age_onset] > 3 AND [se_con_age_onset] < 12, 1, 0) OR
+if([se_non_age_onset] > 3 AND [se_non_age_onset] < 12, 1, 0) OR
+if([tonic_age_onset] > 3 AND [tonic_age_onset] < 12, 1, 0) OR
+if([unclassified_age_onset] > 3 AND [unclassified_age_onset] < 12, 1, 0)) AND
+
+
+[ee_syndrome(17)]= 1, 1, 0)",,,,,,,,,,,,
+other_non_lesional,analysis_hierarchy,,calc,"3.2.9 Other non-lesional","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+([febprov_age_onset] > 12 OR
+[absence_age_onset] > 12 OR
+[atonic_age_onset] > 12 OR
+[atypical_absence_age_onset] > 12 OR
+[bilateral_clonic_age_onset] > 12 OR
+[focal_age_onset] > 12 OR
+[generalized_age_onset] > 12 OR
+[hemiclonic_age_onset] > 12 OR
+[spasms_age_onset] > 12 OR
+[myoclonic_age_onset] > 12 OR
+[other_age_onset] > 12 OR
+[se_con_age_onset] > 12 OR
+[se_non_age_onset] > 12 OR
+[tonic_age_onset] > 12 OR
+[unclassified_age_onset] > 12
+) AND
+
+([ee_syndrome(15)]= 1 OR
+[ee_syndrome(17)]= 1 
+), 1, 0)",,,,,,,,,,,,
+focal_e_enceph_other,analysis_hierarchy,,calc,"3.2.9.1 Focal epileptic encephalopathy other","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+[focal_age_onset] > 12 AND
+
+[ee_syndrome(15)]= 1 , 1, 0)",,,,,,,,,,,,
+generalized_e_enceph_other,analysis_hierarchy,,calc,"3.2.9.2 Generalized epileptic encephalopathy other
+","if(
+([neuroimaging_findings_1] = 1 OR
+[neuroimaging_findings_1] = 18 OR
+[neuroimaging_findings_1] = 21 OR
+[neuroimaging_findings_1] = 23 OR
+
+[neuroimaging_findings_2] = 1 OR
+[neuroimaging_findings_2] = 18 OR
+[neuroimaging_findings_2] = 21 OR
+[neuroimaging_findings_2] = 23 OR
+
+[neuroimaging_findings_3] = 1 OR
+[neuroimaging_findings_3] = 18 OR
+[neuroimaging_findings_3] = 21 OR
+[neuroimaging_findings_3] = 23) AND
+
+[generalized_age_onset] > 12 AND
+[ee_syndrome(16)] = 1, 1, 0)",,,,,,,,,,,,
+mix_unclass_e_enceph_other,analysis_hierarchy,,calc,"3.2.8.3 Mixed/unclassified epileptic encephalopathy other","if(
+([neuroimaging_findings_1]=1 OR
+[neuroimaging_findings_1]=18 OR
+[neuroimaging_findings_1]=21 OR
+[neuroimaging_findings_1]=23 OR
+
+[neuroimaging_findings_2]=1 OR
+[neuroimaging_findings_2]=18 OR
+[neuroimaging_findings_2]=21 OR
+[neuroimaging_findings_2]=23 OR
+
+[neuroimaging_findings_3]=1 OR
+[neuroimaging_findings_3]=18 OR
+[neuroimaging_findings_3]=21 OR
+[neuroimaging_findings_3]=23) AND
+
+([febprov_age_onset] > 12 OR
+[absence_age_onset] > 12 OR
+[atonic_age_onset] > 12 OR
+[atypical_absence_age_onset] > 12 OR
+[bilateral_clonic_age_onset] > 12 OR
+[focal_age_onset] > 12 OR
+[generalized_age_onset] > 12 OR
+[hemiclonic_age_onset] > 12 OR
+[spasms_age_onset] > 12 OR
+[myoclonic_age_onset] > 12 OR
+[other_age_onset] > 12 OR
+[se_con_age_onset] > 12 OR
+[se_non_age_onset] > 12 OR
+[tonic_age_onset] > 12 OR
+[unclassified_age_onset] > 12
+) AND
+[ee_syndrome(17)]= 1 , 1, 0)",,,,,,,,,,,,
+unclassified_epilepsy_ah,analysis_hierarchy,,calc,"Unclassified epilepsy","if([unclassified_epilepsy] = 1, 1, 0)",,,,,,,,,,,,

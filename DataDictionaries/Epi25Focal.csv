@@ -64,3 +64,103 @@ fam_notes,clinical,,notes,"Details of family history of epilepsy",,"Additional i
 syndrome,clinical,"Epilepsy Syndrome",radio,"Focal syndromes","209, ""Benign"" Childhood Epilepsies: Childhood Epilepsy with Centrotemporal Spikes<span title=""ILAE definition""> [<a style=""text-decoration:underline"" target=""_new"" href=""https://www.epilepsydiagnosis.org/syndrome/ects-overview.html"">ILAE Definition</a>]</span> | 210, ""Benign"" Childhood Epilepsies: Atypical Childhood Epilepsy with Centrotemporal Spikes <span title=""ILAE definition""> [<a style=""text-decoration:underline"" target=""_new"" href=""https://www.epilepsydiagnosis.org/syndrome/atypical-ects-overview.html"">ILAE Definition</a>]</span> | 211, ""Benign"" Childhood Epilepsies: Benign Occipital Epilepsy (Panayiotopoulos) <span title=""ILAE definition""> [<a style=""text-decoration:underline"" target=""_new"" href=""https://www.epilepsydiagnosis.org/syndrome/panayiotopoulos-overview.html"">ILAE Definition</a>]</span> | 212, ""Benign"" Childhood Epilepsies: Benign Occipital Epilepsy (Gastaut) <span title=""ILAE definition""> [<a style=""text-decoration:underline"" target=""_new"" href=""https://www.epilepsydiagnosis.org/syndrome/late-childhood-occipital-overview.html"">ILAE Definition</a>] </span> | 213, ""Benign"" Childhood Epilepsies: Idiopathic photosensitive occipital lobe epilepsy <span title=""ILAE definition""> [<a style=""text-decoration:underline"" target=""_new"" href=""https://www.epilepsydiagnosis.org/syndrome/idiophatic-pole-overview.html"">ILAE Definition</a></span>] | 220, Other Non-Structural Focal Epilepsies: Frontal<div class='note' style=""text-indent:0pt"">Non-lesional epilepsy with clinical and/or EEG evidence of a frontal localization [<a class='note' style=""text-decoration:underline; font-size:7pt;"" target=""_new"" href=""https://www.epilepsydiagnosis.org/seizure/frontal-lobe-overview.html"">ILAE Definition</a>]</div> | 221, Other Non-Structural Focal Epilepsies: Frontotemporal<div class='note' style=""text-indent:0pt"">Non-lesional epilepsy with clinical and/or EEG evidence of a frontotemporal localization.]</div> | 222, Other Non-Structural Focal Epilepsies: Temporal<div class='note' style=""text-indent:0pt"">Non-lesional epilepsy with clinical and/or EEG evidence of a temporal localization [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/seizure/temporal-overview.html"">ILAE Definition</a>] that does not meet the criteria for Childhood Epilepsy with Centrotemporal Spikes. Mesial temporal lobe epilepsy secondary to hippocampal sclerosis can be included here.</div> | 223, Other Non-Structural Focal Epilepsies: Occipital<div class='note' style=""text-indent:0pt"">Non-lesional epilepsy with clinical and/or EEG evidence of an occipital localization [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/seizure/occipital-overview.html"">ILAE Definition</a>] that does not meet the criteria for any of the benign occipital epilepsy syndromes.</div> | 224, Other Non-Structural Focal Epilepsies: Temporoccipital<div class='note' style=""text-indent:0pt"">Non-lesional epilepsy with clinical and/or EEG evidence of a temporoccipital localization.</div> | 225, Other Non-Structural Focal Epilepsies: Parietal<div class='note' style=""text-indent:0pt"">Non lesional epilepsy with clinical and/or EEG evidence of a parietal localization [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/seizure/parietal-overview.html"">ILAE Definition</a>]</div> | 226, Other Non-Structural Focal Epilepsies: Multifocal<div class='note' style=""text-indent:0pt"">Non-lesional epilepsy with clinical and/or EEG evidence of more than one localization. Please provide additional details in the <em>Epilepsy Syndrome Comments</em> section.</div> | 227, Other Non-Structural Focal Epilepsies: Unspecified<div class='note' style=""text-indent:0pt"">Non-lesional epilepsy with clinical and/or EEG evidence of focal onset but the specific localization is undetermined.</div> | 250, Structural Focal Epilepsies: Malformation: Focal cortical dysplasia<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite Focal cortical dysplasia of cerebral cortex on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/focal-cortical-dysplasia-overview.html"">ILAE Definition</a></span>]</div> | 251, Structural Focal Epilepsies: Malformation: Lissencephaly<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite Lissencephaly on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/lissencephaly-overview.html"">ILAE Definition</a></span>]</div> | 252, Structural Focal Epilepsies: Malformation: Subcortical band heterotopia<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite Subcortical band heterotopia on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/subcortical-heterotopia-overview.html"">ILAE Definition</a></span>]</div> | 253, Structural Focal Epilepsies: Malformation: Grey matter heterotopia<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite grey matter heterotopia (e.g. PVNH) on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/grey-matter-heterotopia-overview.html"">ILAE Definition</a></span>]</div> | 254, Structural Focal Epilepsies: Malformation: Polymicrogyria<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite polymicrogyria on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/polymicrogyria-overview.html"">ILAE Definition</a></span>]</div> | 255, Structural Focal Epilepsies: Malformation: Hypothalamic Hamartoma<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite Hypothalamic Hamartoma on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/hh-overview.html"">ILAE Definition</a></span>]</div> | 256, Structural Focal Epilepsies: Malformation: Hemimegalencephaly<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite Hemimegaencephaly on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/hemimegalencephaly-overview.html"">ILAE Definition</a></span>]</div> | 257, Structural Focal Epilepsies: Malformation: Schizencephaly<div class='note' style=""text-indent:0pt"">Focal epilepsy with definite Schizencephaly on brain imaging [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/schizencephaly-overview.html"">ILAE Definition</a></span>]</div> | 260, Structural Focal Epilepsies: Traumatic Brain Injury<div class='note' style=""text-indent:0pt"">Focal epilepsy due to acquired brain injury [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/traumatic-brain-injury-overview.html"">ILAE Definition</a></span>]</div> | 270, Structural Focal Epilepsies: Stroke<div class='note' style=""text-indent:0pt"">Focal epilepsy due to hemorrahagic or ischemic stroke [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/stroke-overview.html"">ILAE Definition</a></span>]</div> | 271, Structural Focal Epilepsies: Hypoxic Ischemic Injury<div class='note' style=""text-indent:0pt"">Focal epilepsy due to Hypoxic ischemic injury [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/hypoxic-ischemic-injury-overview.html"">ILAE Definition</a></span>]</div> | 280, Structural Focal Epilepsies: Benign Tumor<div class='note' style=""text-indent:0pt"">Focal epilepsy due to benign tumor (ganglioglioma [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/ganglioglioma-overview.html""> ILAE Definition</a></span>]</div> or DNET [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/dnet-overview.html"">ILAE Definition</a></span>]) | 281, Structural Focal Epilepsies: Vascular malformation: cerebral angioma<div class='note' style=""text-indent:0pt"">Focal epilepsy associated with cerebral angioma [<a style=""text-decoration:underline; font-size:7pt;""=""_new"" href=""https://www.epilepsydiagnosis.org/aetiology/cerebral-angioma-overview.html"">ILAE Definition</a></span>]</div> | 290, Structural Focal Epilepsies: Mixed epilepsy lesions<div class='note' style=""text-indent:0pt"">Focal epilepsy with multiple different epilepsy lesions</div> | 291, Structural Focal Epilepsies: Other, please specify<div class='note' style=""text-indent:0pt"">Use syndrome comments</div>",,,,,,,y,,,,,
 loc_evidence,clinical,,dropdown,"Evidence for focal epilepsy diagnosis","1, Seizure semiology only | 2, Seizure semiology and EEG | 15, Seizure semiology and imaging | 16, Seizure semiology, imaging and histopathology | 3, Seizure semiology, EEG and imaging | 4, Not localized (focal unspecified) | 6, EEG only | 5, Data not available",,,,,,,y,,,,,
 syndrome_notes,clinical,,notes,"Epilepsy Syndrome Comments",,,,,,,,,,,,,
+qc_ucsf,qc,,dropdown,"Exclude status 2019","1, PASS | 2, EXCLUDE",,,,,,,,,,,,
+qc_review,qc,,radio,"Manual review","1, Pass | 2, In progress | 3, Failed",,,,,,,,,,,,
+qc_comment,qc,,notes,Comment,,,,,,,,,,,,,
+unclassified_epilepsy,qc,,dropdown,"Unclassified epilepsy","1, Yes | 2, No","To be filled in QC process after data entry",,,,,,,,,,,
+hc_focal,analysis_hierarchy,,calc,"Hierarchical classification","if([syndrome]>208, 1,0)",,,,,,,,,,,,
+focal,analysis_hierarchy,,calc,"2 Focal","if([lesional] = 1 OR [non_lesional] = 1 , 1, 0)",,,,,,,,,,,,
+lesional,analysis_hierarchy,,calc,"2.1 Lesional","if([syndrome]=250 OR
+[syndrome] = 251 OR
+[syndrome] = 252 OR
+[syndrome] = 253 OR
+[syndrome] = 254 OR
+[syndrome] = 255 OR
+[syndrome] = 256 OR
+[syndrome] = 257 OR
+[syndrome] = 260 OR
+[syndrome] = 270 OR
+[syndrome] = 280 OR
+[syndrome] = 281 OR
+[syndrome] = 290 OR
+[syndrome] = 291, 1, 0)",,,,,,,,,,,,
+developmental,analysis_hierarchy,,calc,"2.1.1 Developmental","if([syndrome] = 250 OR
+[syndrome] = 251 OR
+[syndrome] = 252 OR
+[syndrome] = 253 OR
+[syndrome] = 254 OR
+[syndrome] = 255 OR
+[syndrome] = 256 OR
+[syndrome] = 257 OR
+[syndrome] =280 OR
+[syndrome] = 281, 1, 0)",,,,,,,,,,,,
+mcd,analysis_hierarchy,,calc,"2.1.1.1 MCD","if([syndrome] = 250 OR
+[syndrome] = 251 OR
+[syndrome] = 252 OR
+[syndrome] = 253 OR
+[syndrome] = 254 OR
+[syndrome] = 255 OR
+[syndrome] = 256 OR
+[syndrome] = 257, 1, 0 )","Malformations of cortical development  ",,,,,,,,,,,
+fcd,analysis_hierarchy,,calc,"2.1.1.1.1 FCD","if([syndrome] = 250, 1, 0)","Focal cortical dysplasia",,,,,,,,,,,
+pmg,analysis_hierarchy,,calc,"2.1.1.1.2 PMG","if([syndrome] = 254, 1, 0)",Polymicrogyria,,,,,,,,,,,
+lissencephaly,analysis_hierarchy,,calc,"2.1.1.1.3 Lissencephaly","if([syndrome] = 251, 1, 0)",,,,,,,,,,,,
+schizencephaly,analysis_hierarchy,,calc,"2.1.1.1.4 Schizencephaly","if([syndrome] = 257, 1, 0 )",,,,,,,,,,,,
+grey_matter_heterotopia,analysis_hierarchy,,calc,"2.1.1.1.5 Grey matter heterotopia","if([syndrome] = 253, 1, 0)",,,,,,,,,,,,
+subcortical_band_heterotop,analysis_hierarchy,,calc,"2.1.1.1.6 Subcortical band heterotopia","if([syndrome] = 252, 1, 0 )",,,,,,,,,,,,
+hemimegalencephaly,analysis_hierarchy,,calc,"2.1.1.1.7 Hemimegalencephaly","if([syndrome] = 256, 1, 0 )",,,,,,,,,,,,
+hypothalamic_hamartoma,analysis_hierarchy,,calc,"2.1.1.1.8 Hypothalamic hamartoma","if([syndrome] = 255, 1, 0)",,,,,,,,,,,,
+other_developmental,analysis_hierarchy,,calc,"2.1.1.2 Other developmental","if([syndrome] = 280 OR
+[syndrome] = 281, 1, 0 )",,,,,,,,,,,,
+vascular_malformation,analysis_hierarchy,,calc,"2.1.1.2.1 Vascular malformation ","if([syndrome] = 281, 1, 0)",,,,,,,,,,,,
+benign_tumour,analysis_hierarchy,,calc,"2.1.1.2.2 Benign tumour","if([syndrome] = 280, 1, 0)",,,,,,,,,,,,
+acquired,analysis_hierarchy,,calc,"2.1.2 Acquired","if([syndrome] = 260 OR
+[syndrome] = 270 OR
+[syndrome] = 271, 1, 0)",,,,,,,,,,,,
+traumatic_brain_injury,analysis_hierarchy,,calc,"2.1.2.1 Traumatic brain injury","if([syndrome] = 260, 1, 0)",,,,,,,,,,,,
+stroke,analysis_hierarchy,,calc,"2.1.2.2 Stroke","if([syndrome] = 270, 1, 0)",,,,,,,,,,,,
+hypoxic_ischaemic_injury,analysis_hierarchy,,calc,"2.1.2.3 Hypoxic ischaemic injury","if([syndrome] = 271, 1, 0)",,,,,,,,,,,,
+hs,analysis_hierarchy,,dropdown,"2.1.3 HS","1, HS | 2, no HS | 998, unknown","Hippocampal sclerosis",,,,,,,,,,,
+hs_comment,analysis_hierarchy,,text,"2.1.3.1 HS comment",,"Hippocampal sclerosis comment",,,,,,,,,,,
+other_lesional,analysis_hierarchy,,calc,"2.1.4 Other lesional","if([syndrome] = 291, 1, 0 )",,,,,,,,,,,,
+non_lesional,analysis_hierarchy,,calc,"2.2 Non-lesional","if(
+[syndrome] = 209 OR
+[syndrome] = 210 OR
+[syndrome] = 211 OR
+[syndrome] = 212 OR
+[syndrome] = 213 OR
+[syndrome] = 220 OR
+[syndrome] = 221 OR
+[syndrome] = 222 OR
+[syndrome] = 223 OR
+[syndrome] = 224 OR
+[syndrome] = 225 OR
+[syndrome] = 226 OR
+[syndrome] = 227, 1, 0)",,,,,,,,,,,,
+specific_syndromes,analysis_hierarchy,,calc,"2.2.1 Specific syndromes","if([syndrome] = 209 OR
+[syndrome] = 210 OR
+[syndrome] = 211 OR
+[syndrome] = 212 OR
+[syndrome] = 213, 1, 0)",,,,,,,,,,,,
+childhood_e_cts,analysis_hierarchy,,calc,"2.2.1.1 Childhood epilepsy with centro-temporal spikes","if([syndrome] = 209, 1, 0)",,,,,,,,,,,,
+atypical_childhood_e_cts,analysis_hierarchy,,calc,"2.2.1.2 Atypical childhood epilepsy with centro-temporal spikes","if([syndrome] = 210, 1, 0)",,,,,,,,,,,,
+panayiotopoulos,analysis_hierarchy,,calc,"2.2.1.3 Benign occipital epilepsy: Panayiotopoulos ","if([syndrome] = 211, 1, 0)",,,,,,,,,,,,
+gastaut,analysis_hierarchy,,calc,"2.2.1.4 Benign occipital epilepsy: Gastaut ","if([syndrome] = 212, 1, 0)",,,,,,,,,,,,
+idiopathic_photo_occipital_e,analysis_hierarchy,,calc,"2.2.1.5 Idiopathic photosensitive occipital epilepsy","if([syndrome] = 213, 1, 0)",,,,,,,,,,,,
+other_non_lesional,analysis_hierarchy,,calc,"2.2.2 Other non-lesional","if([syndrome] = 220 OR
+[syndrome] = 221 OR
+[syndrome] = 222 OR
+[syndrome] = 223 OR
+[syndrome] = 224 OR
+[syndrome] = 225 OR
+[syndrome] = 226 OR
+[syndrome] = 227, 1, 0)",,,,,,,,,,,,
+tle_no_hs,analysis_hierarchy,,calc,"2.2.2.1 TLE (no HS)","if([syndrome] = 222, 1, 0)","Temporal lobe epilepsy without hippocampal sclerosis",,,,,,,,,,,
+fle,analysis_hierarchy,,calc,"2.2.2.2 FLE","if([syndrome] = 220, 1, 0)","Frontal lobe epilepsy",,,,,,,,,,,
+fronto_temporal,analysis_hierarchy,,calc,"2.2.2.3 Fronto-temporal","if([syndrome] = 221, 1, 0)",,,,,,,,,,,,
+multifocal,analysis_hierarchy,,calc,"2.2.2.4 Multifocal","if([syndrome] = 226, 1, 0)",,,,,,,,,,,,
+ple,analysis_hierarchy,,calc,"2.2.2.5 PLE","if([syndrome] = 225, 1, 0)","Parietal lobe epilepsy",,,,,,,,,,,
+ole,analysis_hierarchy,,calc,"2.2.2.6 OLE","if([syndrome] = 223, 1, 0)",Oligoepilepsy,,,,,,,,,,,
+temporo_occipital,analysis_hierarchy,,calc,"2.2.2.7 Temporo-occipital","if([syndrome] = 224, 1, 0)",,,,,,,,,,,,
+unspecified,analysis_hierarchy,,calc,"2.2.2.8 Unspecified","if([syndrome] = 227, 1, 0)",,,,,,,,,,,,
+unclassified_epilepsy_ah,analysis_hierarchy,,calc,"Unclassified epilepsy","if([unclassified_epilepsy] = 1, 1, 0)",,,,,,,,,,,,
