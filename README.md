@@ -5,4 +5,4 @@ Setup for the data capture of phenotype Epi25 project
 - Glossaries
 - Issue tracking
 
-Details about Epi25 can be found on the [project webpage](www.epi-25.org) 
+Details about Epi25 can be found on the [project webpage](https://www.epi-25.org) 
