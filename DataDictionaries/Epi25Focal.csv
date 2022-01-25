@@ -68,22 +68,17 @@ qc_ucsf,qc,,dropdown,"Exclude status 2019","1, PASS | 2, EXCLUDE",,,,,,,,,,,,
 qc_review,qc,,radio,"Manual review","1, Pass | 2, In progress | 3, Failed",,,,,,,,,,,,
 qc_comment,qc,,notes,Comment,,,,,,,,,,,,,
 unclassified_epilepsy,qc,,dropdown,"Unclassified epilepsy","1, Yes | 2, No","To be filled in QC process after data entry",,,,,,,,,,,
-hc_focal,analysis_hierarchy,,calc,"Hierarchical classification","if([syndrome]>208, 1,0)",,,,,,,,,,,,
-focal,analysis_hierarchy,,calc,"2 Focal","if([lesional] = 1 OR [non_lesional] = 1 , 1, 0)",,,,,,,,,,,,
-lesional,analysis_hierarchy,,calc,"2.1 Lesional","if([syndrome]=250 OR
-[syndrome] = 251 OR
-[syndrome] = 252 OR
-[syndrome] = 253 OR
-[syndrome] = 254 OR
-[syndrome] = 255 OR
-[syndrome] = 256 OR
-[syndrome] = 257 OR
-[syndrome] = 260 OR
-[syndrome] = 270 OR
-[syndrome] = 280 OR
-[syndrome] = 281 OR
-[syndrome] = 290 OR
-[syndrome] = 291, 1, 0)",,,,,,,,,,,,
+hs_comment,qc,,dropdown,"HS comment","1, TLE without HS | 2, Benign tumor | 3, FCD | 4, PMG | 5, Stroke | 6, Mixed lesions | 7, TBI | 8, Angioma | 9, REVIEW | 10, HII | 11, HS + TLE | 12, HS other | 998, Unknown","Hippocampal sclerosis comment",,,,,,,,,,,
+hc_focal,analysis_hierarchy,,calc,"Hierarchical classification","if([syndrome]>208 AND
+([qc_ucsf]= 1 OR [qc_review] = 1) AND [unclassified_epilepsy]<> 1, 1, 0)",,,,,,,,,,,,
+focal,analysis_hierarchy,,calc,"2 Focal","if([unclassified_epilepsy] =1, 0, 1)",,,,,,,,,,,,
+lesional,analysis_hierarchy,,calc,"2.1 Lesional","if(
+[developmental] = 1 OR
+[acquired] =1  OR
+[hs] = 1 OR
+[other_lesional] = 1 OR
+[syndrome] = 290,
+ 1, 0)",,,,,,,,,,,,
 developmental,analysis_hierarchy,,calc,"2.1.1 Developmental","if([syndrome] = 250 OR
 [syndrome] = 251 OR
 [syndrome] = 252 OR
@@ -120,42 +115,35 @@ acquired,analysis_hierarchy,,calc,"2.1.2 Acquired","if([syndrome] = 260 OR
 traumatic_brain_injury,analysis_hierarchy,,calc,"2.1.2.1 Traumatic brain injury","if([syndrome] = 260, 1, 0)",,,,,,,,,,,,
 stroke,analysis_hierarchy,,calc,"2.1.2.2 Stroke","if([syndrome] = 270, 1, 0)",,,,,,,,,,,,
 hypoxic_ischaemic_injury,analysis_hierarchy,,calc,"2.1.2.3 Hypoxic ischaemic injury","if([syndrome] = 271, 1, 0)",,,,,,,,,,,,
-hs,analysis_hierarchy,,dropdown,"2.1.3 HS","1, HS | 2, no HS | 998, unknown","Hippocampal sclerosis",,,,,,,,,,,
-hs_comment,analysis_hierarchy,,text,"2.1.3.1 HS comment",,"Hippocampal sclerosis comment",,,,,,,,,,,
+hs,analysis_hierarchy,,calc,"2.1.3 HS","if( [hs_comment] = 11 OR [hs_comment]= 12, 1, if([hs_comment]< 11, 2, 998))","Hippocampal sclerosis - No other relevant lesion ",,,,,,,,,,,
+hs_with_tle,analysis_hierarchy,,calc,"2.1.3.1 HS with TLE","if([hs_comment]= 11, 1, 0)",,,,,,,,,,,,
+hs_other,analysis_hierarchy,,calc,"2.1.3.2 HS other","if([hs_comment]= 12, 1, 0)",,,,,,,,,,,,
 other_lesional,analysis_hierarchy,,calc,"2.1.4 Other lesional","if([syndrome] = 291, 1, 0 )",,,,,,,,,,,,
 non_lesional,analysis_hierarchy,,calc,"2.2 Non-lesional","if(
-[syndrome] = 209 OR
-[syndrome] = 210 OR
-[syndrome] = 211 OR
-[syndrome] = 212 OR
-[syndrome] = 213 OR
-[syndrome] = 220 OR
-[syndrome] = 221 OR
-[syndrome] = 222 OR
-[syndrome] = 223 OR
-[syndrome] = 224 OR
-[syndrome] = 225 OR
-[syndrome] = 226 OR
-[syndrome] = 227, 1, 0)",,,,,,,,,,,,
-specific_syndromes,analysis_hierarchy,,calc,"2.2.1 Specific syndromes","if([syndrome] = 209 OR
-[syndrome] = 210 OR
-[syndrome] = 211 OR
-[syndrome] = 212 OR
-[syndrome] = 213, 1, 0)",,,,,,,,,,,,
+[specific_syndromes] = 1 OR
+[other_non_lesional] = 1, 1, 0)",,,,,,,,,,,,
+specific_syndromes,analysis_hierarchy,,calc,"2.2.1 Specific syndromes","if(
+[childhood_e_cts] = 1 OR
+[atypical_childhood_e_cts] = 1 OR
+[panayiotopoulos] = 1 OR
+[gastaut] = 1 OR
+[idiopathic_photo_occipital_e] = 1, 1, 0)",,,,,,,,,,,,
 childhood_e_cts,analysis_hierarchy,,calc,"2.2.1.1 Childhood epilepsy with centro-temporal spikes","if([syndrome] = 209, 1, 0)",,,,,,,,,,,,
 atypical_childhood_e_cts,analysis_hierarchy,,calc,"2.2.1.2 Atypical childhood epilepsy with centro-temporal spikes","if([syndrome] = 210, 1, 0)",,,,,,,,,,,,
 panayiotopoulos,analysis_hierarchy,,calc,"2.2.1.3 Benign occipital epilepsy: Panayiotopoulos ","if([syndrome] = 211, 1, 0)",,,,,,,,,,,,
 gastaut,analysis_hierarchy,,calc,"2.2.1.4 Benign occipital epilepsy: Gastaut ","if([syndrome] = 212, 1, 0)",,,,,,,,,,,,
 idiopathic_photo_occipital_e,analysis_hierarchy,,calc,"2.2.1.5 Idiopathic photosensitive occipital epilepsy","if([syndrome] = 213, 1, 0)",,,,,,,,,,,,
-other_non_lesional,analysis_hierarchy,,calc,"2.2.2 Other non-lesional","if([syndrome] = 220 OR
-[syndrome] = 221 OR
-[syndrome] = 222 OR
-[syndrome] = 223 OR
-[syndrome] = 224 OR
-[syndrome] = 225 OR
-[syndrome] = 226 OR
-[syndrome] = 227, 1, 0)",,,,,,,,,,,,
-tle_no_hs,analysis_hierarchy,,calc,"2.2.2.1 TLE (no HS)","if([syndrome] = 222, 1, 0)","Temporal lobe epilepsy without hippocampal sclerosis",,,,,,,,,,,
+other_non_lesional,analysis_hierarchy,,calc,"2.2.2 Other non-lesional","if(
+[tle_no_hs] = 1 OR
+[fle] = 1 OR
+[fronto_temporal] = 1 OR
+[multifocal] = 1 OR
+[ple] = 1 OR
+[ole] = 1 OR
+[temporo_occipital] = 1 OR
+[unspecified] = 1, 1, 0)",,,,,,,,,,,,
+tle_no_hs,analysis_hierarchy,,calc,"2.2.2.1 TLE (no HS)","if(([syndrome] = 222 AND [hs] != 1) OR
+[hs_comment] = 1, 1, 0)","Temporal lobe epilepsy without hippocampal sclerosis",,,,,,,,,,,
 fle,analysis_hierarchy,,calc,"2.2.2.2 FLE","if([syndrome] = 220, 1, 0)","Frontal lobe epilepsy",,,,,,,,,,,
 fronto_temporal,analysis_hierarchy,,calc,"2.2.2.3 Fronto-temporal","if([syndrome] = 221, 1, 0)",,,,,,,,,,,,
 multifocal,analysis_hierarchy,,calc,"2.2.2.4 Multifocal","if([syndrome] = 226, 1, 0)",,,,,,,,,,,,
@@ -164,3 +152,16 @@ ole,analysis_hierarchy,,calc,"2.2.2.6 OLE","if([syndrome] = 223, 1, 0)",Oligoepi
 temporo_occipital,analysis_hierarchy,,calc,"2.2.2.7 Temporo-occipital","if([syndrome] = 224, 1, 0)",,,,,,,,,,,,
 unspecified,analysis_hierarchy,,calc,"2.2.2.8 Unspecified","if([syndrome] = 227, 1, 0)",,,,,,,,,,,,
 unclassified_epilepsy_ah,analysis_hierarchy,,calc,"Unclassified epilepsy","if([unclassified_epilepsy] = 1, 1, 0)",,,,,,,,,,,,
+cg_focal,ilaecg_designation,,calc,"2.0 Focal case not otherwise specified","if([unclassified_epilepsy] !=1 and 
+[cg_lesion] != 1 and
+[cg_nafe] !=1 and 
+[cg_hs] != 1, 1, 0 )",,,,,,,,,,,,
+cg_nafe,ilaecg_designation,,calc,"2.1 Documented lesion negative","if([non_lesional] = 1 
+AND [hs] <> 1,
+1, 0)",,,,,,,,,,,,
+cg_hs,ilaecg_designation,,calc,"2.2 Documented focal hippocampal sclerosis (HS)","if([hs] =1 , 1 , 0)",,,,,,,,,,,,
+cg_lesion,ilaecg_designation,,calc,"2.3 Documented lesion other than HS
+","if(
+[lesional] = 1 AND
+[hs] <> 1, 
+ 1, 0)",,,,,,,,,,,,
