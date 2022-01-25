@@ -17,6 +17,21 @@
 
 [other_age_onset] > [other_age_last] and [other_age_last] <> ""
 
+[mixed_case]=1 and !([tonic_seizures]=1 or [myoclonic_seizures]=1 or [generalized_seizures]=1 or [absence_seizures] =1 or 
+[atypical_absence_seizures] =1 or
+[atonic_seizures]=1)
+
+[mixed_case]=1 and !([aura_seizures]=1 or [dyscognitive_seizures]=1 or 
+[bilateral_seizures]=1 or
+[other_focal_seizures]=1)
+
+isblankormissingcode([syndrome]) and ![syndrome_focal]=199
+
+[mixed_case]=1 and isblankormissingcode([syndrome_focal])
+
+Unclassified epilepsy records
+[unclassified_epilepsy] = 1 and isblankormissingcode([syndrome]) and isblankormissingcode([syndrome_focal])
+
 
 ### Focal
 Age of onset and latest incidence (febrile seizures)
@@ -32,6 +47,8 @@ Age of onset and latest incidence (febrile seizures)
 
 [other_age_onset] > [other_age_last] and [other_age_last] <> ""
 
+Unclassified epilepsy records
+[unclassified_epilepsy] = 1 and isblankormissingcode([syndrome])
 
 ### EE
 Age of onset and latest incidence (febrile seizures)
@@ -54,3 +71,23 @@ Age of onset and latest incidence (febrile seizures)
 [ee_syndrome(1)] =1 AND
 [ee_syndrome(2)] =1 AND
 [ee_syndrome(3)] =1
+
+Unclassified epilepsy records
+[unclassified_epilepsy] = 1 and
+isblankormissingcode([ee_syndrome(1)]) and
+isblankormissingcode([ee_syndrome(2)]) and
+isblankormissingcode([ee_syndrome(3)]) and
+isblankormissingcode([ee_syndrome(4)]) and
+isblankormissingcode([ee_syndrome(5)]) and
+isblankormissingcode([ee_syndrome(6)]) and
+isblankormissingcode([ee_syndrome(7)]) and
+isblankormissingcode([ee_syndrome(8)]) and
+isblankormissingcode([ee_syndrome(9)]) and
+isblankormissingcode([ee_syndrome(10)]) and
+isblankormissingcode([ee_syndrome(11)]) and
+isblankormissingcode([ee_syndrome(12)]) and
+isblankormissingcode([ee_syndrome(13)]) and
+isblankormissingcode([ee_syndrome(14)]) and
+isblankormissingcode([ee_syndrome(15)]) and
+isblankormissingcode([ee_syndrome(16)]) and
+isblankormissingcode([ee_syndrome(17)])
