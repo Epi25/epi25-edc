@@ -1,0 +1,12 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+record_id,broad_samples,,text,"Record ID Link <a href=""https://redcap.uni.lu/redcap/redcap_v12.4.1/DataEntry/record_home.php?pid=[url_link]&arm=1&id=[record_id]"">[record_id]</a>",,"All records at the Broad",,,,,,,,,,,
+bsample_id,broad_samples,,text,bsample_id,,,,,,,,,,,,,
+csample_id,broad_samples,,text,csample_id,,,,,,,,,,,,,
+year,broad_samples,,text,Year,,"Year of data collection in Epi25",,,,,,,,,,,
+gender_sample,broad_samples,,text,Sex,,"Sex submitted to the Broad",,,,,,,,,,,
+primary_disease,broad_samples,,text,"Primary disease",,,,,,,,,,,,,
+epi_type_sample,broad_samples,,text,"Epilepsy type at the Broad",,,,,,,,,,,,,
+epi_type_translated,broad_samples,,text,"Epi type sample translated",,"Classified as gge, focal, ee, unclassified, exclude or control for comparison with phenotype data submission",,,,,,,,,,,
+phenotype_data_form,broad_samples,,text,"Phenotype data form",,"Sample's submission type in Epi25 database",,,,,,,,,,,
+qc_comment,broad_samples,,text,"Comments related to data",,,,,,,,,,,,,
+url_link,broad_samples,,calc,"URL link","if([epi_type_translated] = ""focal"",103,0) + if([epi_type_translated] = ""gge"", 80, 0) + if([epi_type_translated] = ""ee"", 104, 0)",,,,,,,,,,,,
