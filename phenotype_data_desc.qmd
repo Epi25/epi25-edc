@@ -28,4 +28,6 @@ We will resolve the discrepancy in updates.
 
 The condition hippocampal sclerosis (HS) is coded in two ways in the data, one as a finding of neurological imaging as well as a classification in hs_detail, which contains annotation signifying conditions not considered HS.
 
+## QC
+Checks for eligibility of cases based on an established criteria. ...
 
