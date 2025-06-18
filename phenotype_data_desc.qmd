@@ -18,7 +18,7 @@ For cases that cannot be classified into either but have a solid foundation of b
 
 ## Seizure classification
 
-Seizures also follows the guidelines of the ILAE.
+Seizures also follow the guidelines of the ILAE.
 We record onset and last recorded age of seizure where available.
 For some focal and GGE cases, other_focal_seizures and other_seizures are captured separately but the onset is only recorded as other_age_onset and other_age_last.
 Some cases also have an age of onset recorded but the appropriate seizure type not listed correctly.
